@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
+using FluentValidationFilter.Domain;
 
 namespace FluentValidationFilter
 {
@@ -27,7 +28,7 @@ namespace FluentValidationFilter
             {
                 options.Filters.Add(new FluentValidationFilter());
             })
-            .AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>()); ;
+            .AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Pessoa>()); ;
             
         }
 
